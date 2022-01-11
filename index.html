@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Person Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="image-wrapper">
+            <img
+            width="128" 
+            height="128"
+            :class="gender" 
+            v-bind:src="picture" 
+            :alt="`${firstName} ${lastName}`" 
+            />
+        </div>
+        <div class="content-wrapper" v-cloak>
+            <h1>{{firstName}} {{lastName}}</h1>
+            <h3>Location: {{state}}, {{country}}</h3>
+            <h3>Contact me: {{email}}</h3>
+            <button v-on:click="getUser()" :class="gender">Next one</button>
+        </div>    
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
